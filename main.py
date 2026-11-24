@@ -6,9 +6,9 @@ Writes one cold email pitching bookkeeping to a busy plumber
 """
 import os
 
-ENTRY = """Subject: \u00a329 a month. That's the whole pitch.
+SUBJECT = "Subject: \u00a329 a month. That's the whole pitch."
 
-Hi,
+BODY = """Hi,
 
 You start at 5am, answer emergency call-outs all day, and do the books at 9pm when you should be done. That last part is the job I do.
 
@@ -21,6 +21,9 @@ Reply "yes" and I'll ring you for ten minutes this week. Ten minutes, and you'll
 Thanks,
 Sarah
 Ledger & Lime Bookkeeping"""
+
+# The entry is the subject line, a blank line, then the body.
+ENTRY = SUBJECT + "\n\n" + BODY
 
 # Gate (RULES.txt): /output/entry.txt must be UTF-8 text of 1-800 chars,
 # not only whitespace. Fail loudly here rather than ship invalid.
